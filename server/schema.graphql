@@ -1,0 +1,21 @@
+# The Query type defines all of the top-level entry points for queries that clients execute against your data graph. It resembles an object type, but its name is always Query.
+type Query {
+  annonces: [Annonce]
+  annonce(id: ID!): Annonce
+}
+
+# Most of the types you define in a GraphQL schema are object types. An object type contains a collection of fields, each of which can be either a scalar type or another object type. Two object types can include each other as fields.
+type Utilisateur {
+  id: ID!
+  name: String
+}
+
+type Annonce {
+  id: ID!
+  title: String
+  price: Float
+  address: String
+  image: String
+  description: String
+  utilisateur: Utilisateur
+}
